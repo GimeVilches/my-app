@@ -5,7 +5,6 @@
     align-content: center;
     width: 100%;
    flex-wrap: wrap;
-   min-height: 100px;
    background-color: #ede9dd;
    
 }
@@ -19,7 +18,7 @@
     display: inline;
    font-size: 30px;
    font-style: italic;
-   margin: 50px;
+   margin:0px 50px;
   
    
 }
@@ -39,4 +38,5 @@
     list-style: none;
     text-decoration: none;
     color: #e91133;
+   
 }
