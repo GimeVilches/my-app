@@ -1,0 +1,30 @@
+.contenedorCount{
+    margin-top: 30px;
+   
+    
+}
+.botonCount{
+    font-size: 20px;
+    color: #e91133;
+   height: 40px;
+    margin-left: 20px;
+    margin: 20px;
+    
+   
+}
+
+.contadorInicial{
+    color: #018b5a;
+    margin-left: 20px;
+    font-size: 30px;
+    margin: 20px;
+   
+}
+.botonAgregar{
+    font-size: 20px;
+    color: #e91133;
+   
+    margin-left: 20px;
+    height: 40px;
+    margin: 20px;
+}
