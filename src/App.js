@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer color="#fb9a93" title="Productos Disponibles" />
+      <ItemListContainer color="#fb9a93" greeting="Productos Disponibles"  />
     </div>
   );
 }
