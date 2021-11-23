@@ -1,5 +1,5 @@
 import "./ItemListContainer.css";
-import ItemCount from "../ItemCount/ItemCount";
+
 import { useState, useEffect } from 'react'
 import ItemList from "./ItemList";
 import getProducts from "../Services/Products";
@@ -19,7 +19,7 @@ const ItemListContainer= (props) =>{
     return(
         <div className="contenedor">
             <h1 style={{color:`${props.color}`}}>{props.greeting}</h1>
-            <ItemCount inicial ="0" stock = "10" /> 
+            
             <ItemList products={products} />
            
         </div>
