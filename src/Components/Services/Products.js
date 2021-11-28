@@ -3,7 +3,7 @@
 
 
 const data = [
-    {id : 1, title : "LG K 62 128 GB", description : "Memoria interna: 128 GB", price : " $ 35999", pictureUrl : "https://http2.mlstatic.com/D_NQ_NP_2X_973809-MLA48041270287_102021-F.webp"},
+    {id : 1, title : "LG K 62 128 GB", description : "Memoria interna: 128 GB", price : " $ 35999", pictureUrl : "https://http2.mlstatic.com/D_NQ_NP_2X_973809-MLA48041270287_102021-F.webp", stock: 8},
     {id : 2, title : "LG K 22 32 GB", description : "Posee el novedoso sistema operativo Android 10", price : " $ 21149", pictureUrl : "https://http2.mlstatic.com/D_NQ_NP_2X_836391-MLA44123219615_112020-F.webp" },
     {id: 3, title : "Motorola E 6 Plus", description : "Cuenta con el sistema operativo avanzado Android 9.0 Pie ", price : " $ 39389", pictureUrl : "https://http2.mlstatic.com/D_NQ_NP_2X_990342-MLA40114956978_122019-F.webp"  },
     {id : 4, title : "Motorola E 7", description : "Posee el novedoso sistema operativo Android 10 ", price : "$ 21999", pictureUrl :"https://http2.mlstatic.com/D_NQ_NP_2X_842056-MLA46651798889_072021-F.webp" },

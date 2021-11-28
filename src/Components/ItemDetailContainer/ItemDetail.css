@@ -1,0 +1,20 @@
+.price{
+    font-size: 18px;
+    color: black;
+   margin: 5px;
+}
+.stay{
+    font-size: 18px;
+    color: black;
+   margin-top: 10px;
+}
+.containerItem{
+    background-color: #94d9d4;
+    width: 700px;
+    height: 300px;
+    margin-top: 25px;
+}
+.titleItem{
+    font-size: 24px;
+    margin-top: 10px;
+}

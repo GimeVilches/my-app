@@ -3,7 +3,7 @@ import Item from "./Item";
 import "./Item.css";
 
 const ItemList = ({products}) =>{
-    console.log('Products en ItemList', products)
+    
     return(
         <div className= "CardContainer">
         {products.map(product => {
