@@ -16,6 +16,7 @@ import Cart from './Components/CartWidget/Cart';
 
 
 function App() {
+  console.log("hola");
   return (
     <div className="App">
       

@@ -27,7 +27,7 @@ const ItemDetail = ({ items }) => {
         <Row className="py-5">
           <Col className="d-flex align-items-center justify-content-center">
             <Image
-              style={{ Height: "550px", objectFit: "cover" }}
+              style={{ maxHeight: "350px", objectFit: "cover" }}
               src={items.img}
               rounded
             />
@@ -35,7 +35,7 @@ const ItemDetail = ({ items }) => {
           <Col className="info-container">
             <div className="d-flex flex-column justify-content-start">
               <h2>{items.title}</h2>
-              <h2>$ {items.price}</h2>
+              <h2> {items.price}</h2>
               <p className="pb-5">{items.description}</p>
               {itemCountVisible && (
                 <ItemCount stock={items.stock} initial={0} onAdd={onAdd} />

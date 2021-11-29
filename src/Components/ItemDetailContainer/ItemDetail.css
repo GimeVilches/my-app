@@ -26,3 +26,7 @@
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 5px;
 }
+element.style {
+    max-height: 350px;
+    object-fit: cover;
+}

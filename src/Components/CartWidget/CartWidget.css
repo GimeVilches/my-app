@@ -3,4 +3,9 @@
     color: #1a4300;
    margin-left: 40px;
     padding: 0px 80px;
+    display: flex;
+    align-items: center;
+   background-color: #94d9d4;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
 }

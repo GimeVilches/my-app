@@ -4,10 +4,12 @@ import { useParams } from "react-router";
 import { products } from "../Products";
 import Spinner from "../Spinner/spinner";
 
+
 const ItemDetailContainer = () => {
   const [items, setItems] = useState({});
   const [loader, setLoader] = useState(false);
   const { itemId } = useParams();
+  console.log(itemId);
   useEffect(() => {
     setLoader(true);
     const promise = new Promise((resolve, reject) => {
@@ -18,8 +20,11 @@ const ItemDetailContainer = () => {
 
     promise
       .then((res) => {
-        itemId && setItems(res.find((items) => items.id === itemId));
-        
+        if (itemId) {
+          const foundItem = res.find((items) => items.id === Number(itemId));
+          
+          if (foundItem) setItems(foundItem); 
+        }
       })
       .catch(() => {
         console.log("Error al cargar");

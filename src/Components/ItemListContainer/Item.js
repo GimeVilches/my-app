@@ -30,7 +30,7 @@ const Item = ({ item }) => {
               paddingBottom: "1rem",
             }}
           >
-            <p className="fs-5 mb-0">${item.price}</p>
+            <p className="fs-5 mb-0">{item.price}</p>
           </div>
           <Button style={{backgroundColor:"rgb(79, 192, 172)", border:"none", color:"#fff"}}>Agregar al carrito</Button>
         </Card.Body>
