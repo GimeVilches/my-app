@@ -1,57 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import "./ItemCount.css"
+import { Button } from "react-bootstrap";
 
-const ItemCount= (props) =>{
-    const [stock, setStock] = useState (parseInt(props.stock));
-
-    const [contador,setContador] = useState (parseInt(props.inicial));
-
-    const aumentar = () => {
-        if (stock ===0){
-            alert( "No hay mas Stock")
-          
-        }
-        else {
-            setContador (contador + 1 )
-            setStock ( stock - 1 )
-        }
-
-    };
-    const disminuir = () => {
-        if (contador === 0){
-            alert ("No hay productos en el carrito para descontar")
-            
-
-        }
-        else {
-            setContador ( contador - 1 )
-            setStock (stock + 1 )
-        }
-    };
-    
-    const onAdd = () =>{
-        if(contador === 0){
-            alert("No hay unidades en el carrito para comprar")
-        }
-        else{
-            alert (`Se han agregado ${contador} unidades al carrito `)
-        }
-       
-    }
-
-    return(
+function ItemCount({stock, onAdd, initial }) {
+    const [count, setCount] = useState(initial);
+   
+    const increase = () => {
+      if (count < stock) {
+        setCount(count + 1);
         
-       <div className="contenedorCount">
-           
-       <p className="contadorInicial"> { contador } </p>
-           <button className="botonCount" onClick = {disminuir}> - </button>
-          <button className="botonAgregar" onClick = {onAdd}>Agregar</button>
-           <button className="botonCount" onClick = {aumentar}> + </button>
-
-       </div>
-            
-            
-    )
-
-}
-export default ItemCount
+      }
+    };
+  
+    const decrease = () => {
+      if (count > initial) {
+        setCount(count - 1);
+        
+      }
+    };
+  
+    useEffect(() => {
+      onAdd(count);
+    }, [count]);
+  
+    return (
+      <Fragment>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            paddingBottom: "1rem",
+          }}
+        >
+          <Button variant="danger" onClick={decrease}>
+            -
+          </Button>{" "}
+          <p style={{ margin: "0" }}>{count}</p>
+          <Button variant="success" onClick={increase}>
+            +
+          </Button>{" "}
+        </div>
+      </Fragment>
+  
+    );
+  }
+  
+  export default ItemCount;
+  

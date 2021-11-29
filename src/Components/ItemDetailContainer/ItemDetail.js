@@ -1,35 +1,68 @@
-import React from 'react';
-import { Image, Item } from 'semantic-ui-react';
+
+import { Row, Container, Col, Image, Button } from "react-bootstrap";
 import "./ItemDetail.css";
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 
 
-const ItemDetail = ({ items }) => (
-  <Item.Group>
-      
-    <Item>
-    
-      <Item.Image src={items.pictureUrl} style={{ maxHeight: 600, minHeight: 600 }} />
-
-      <Item.Content>
-      <div className= "containerItem">
-          
-        <Item.Header>
-            <spam className= "titleItem">{items.title}</spam></Item.Header>
-        <Item.Meta>
-            <div className='price'>
-          <span >Precio :{items.price}</span></div>
-          <div className='stay'>
-          <span >Stock disponible :{items.stock}</span></div>
-        </Item.Meta>
-        <Item.Description>{items.totalDescription}</Item.Description>
-        </div>
-      </Item.Content>
-      
-    </Item>
-
-   
-  </Item.Group>
-)
-
-export default ItemDetail
+const ItemDetail = ({ items }) => {
+    const [itemCountVisible, setItemCountVisible] = useState(true);
+    const [buyButtonVisibility, setBuyButtonVisibility] = useState(true);
+    const [itemsCount, setItemsCount] = useState(0);
+  
+    const onAdd = (count) => {
+      setItemsCount(count);
+    };
+  
+    const onAddToCart = () => {
+      setItemCountVisible(false);
+      setBuyButtonVisibility(false);
+    };
+  
+    return (
+      <>
+        <Container>
+          <Row className="py-5">
+            <Col className="d-flex align-items-center justify-content-center">
+              <Image
+                style={{ maxHeight: "500px", objectFit: "cover" }}
+                src={items.pictureUrl}
+                rounded
+              />
+            </Col>
+            <Col className="info-container">
+              <div className="d-flex flex-column justify-content-start">
+                <h2>{items.title}</h2>
+                <h2> {items.price}</h2>
+                <p className="pb-5">{items.description}</p>
+                {itemCountVisible && (
+                  <ItemCount stock={items.stock} initial={0} onAdd={onAdd} />
+                )}
+                {buyButtonVisibility && (
+                  <Button onClick={onAddToCart} className="w-50 align-self-center" style={{backgroundColor:"rgb(79, 192, 172)", border:"none"}}>
+                    Agregar al carrito
+                  </Button>
+                )}
+                {!buyButtonVisibility && (
+                  <div className="d-flex flex-column align-items-center">
+                    <p style={{fontSize:"1.5rem"}}>{itemsCount} Unidades agregadas al carrito.</p>
+                    <Link to="/cart">
+                      <Button className="btn-danger">Terminar compra</Button>
+                    </Link>
+                  </div>
+                )}
+              </div>
+              <Col className="text-muted d-flex align-items-center">
+                Stock: {items.stock} unidades disponibles.
+              </Col>
+            </Col>
+          </Row>
+        </Container>
+      </>
+    );
+  };
+  
+  export default ItemDetail;
+  

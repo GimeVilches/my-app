@@ -1,23 +1,18 @@
-import React from 'react';
+
 import Item from "./Item";
 import "./Item.css";
+import React, { Fragment } from 'react';
 
-const ItemList = ({products}) =>{
-    
+const ItemList = ({items}) => {
     return(
-        <div className= "CardContainer">
-        {products.map(product => {
-           return(
-            <Item 
-            key={product.id}
-            description = {product.description}
-            pictureUrl = {product.pictureUrl}
-            price = {product.price}
-            title = {product.title}
-            />
-           )
+      <Fragment>
+          <div className="CardContainer">
+        {items.map((item)=>{
+          return <Item key={item.id} item={item}/>
         })}
         </div>
+      </Fragment>
     )
-}
-export default ItemList
+  }
+  
+  export default ItemList;

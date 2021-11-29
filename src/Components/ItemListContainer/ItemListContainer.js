@@ -1,29 +1,46 @@
 import "./ItemListContainer.css";
 
-import { useState, useEffect } from 'react'
+import {Fragment, useState, useEffect } from 'react'
 import ItemList from "./ItemList";
 import getProducts from "../Services/Products";
+import { useParams } from "react-router";
+import Spinner from "../Spinner/spinner";
 
 
 
-const ItemListContainer= (props) =>{
-    const [products, setProducts] = useState([])
-  
+
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [loader, setLoader] = useState(false);
+  const { catId } = useParams();
+
   useEffect(() => {
-    getProducts
-    .then(res => {
-      setProducts(res)
-    })
-    .catch(err => alert('Estamos ante un problema', err))
-  },[])
-    return(
-        <div className="contenedor">
-            <h1 style={{color:`${props.color}`}}>{props.greeting}</h1>
-            
-            <ItemList products={products} />
-           
-        </div>
-    )
+    setLoader(true);
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(getProducts);
+      }, 2000);
+    });
+    promise
+      .then((res) => {
+        catId ? setItems(res.filter((items) => items.category === catId)) :
+        setItems(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => (
+        setLoader(false)
+      ));
+  },[catId]);
 
-}
-export default ItemListContainer
+  return ( loader ? <Spinner /> :
+    <Fragment>
+      <div className="container-list">
+        <ItemList items={items} />
+      </div>
+    </Fragment>
+  );
+};
+
+export default ItemListContainer;
