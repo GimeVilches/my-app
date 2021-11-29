@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+<h1 align="center">Ecommerce Techno Stuff</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TECHNO sTUFF es un e-commerce para la venta de celulares y Accesorios.
 
-## Available Scripts
+## Cuenta al momento de la entrega con:
+- Filtro por categorías: tomando las categorías, al momento de la entrega de un Array de productos (Products.js).
+- Carrito: Al momento de la entrega es estatico.
+- Vistas de listas de productos: vista general de productos con foto y detalles mínimos.
+- Vista de detalles: vista con todos los detalles del producto y la opción de agregar una cantidad del mismo (esto ultimo al momento es estatico).
+-  Barra de navegacion funcional con react router
+- Formulario de contacto funcional.
+- Proximamente se sumaran otras funcionalidades y se mejoraran otras.
 
-In the project directory, you can run:
+## Pasos para ver el sitio desde local
+1. Desde la opcion Code copiamos el link HTTPS:
 
-### `npm start`
+`https://github.com/GimeVilches/my-app.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. En nuestra terminal elegimos un lugar para clonar la carpeta y escribimos "git clone" + link que copiamos anteriormente:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`git clone https://github.com/GimeVilches/my-app.git`
 
-### `npm test`
+3. Desde la terminal nos paramos en la carpeta raiz del proyecto e instalamos todos las dependencias que están dentro con **npm install** o **npm i**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm instal` o `npm i`
 
-### `npm run build`
+4. Escribimos en la terminal **npm start** y se abrira el sitio en el navegador predeterminado (estará disponible en http://localhost:3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dependencias usadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React Bootstrap](https://react-bootstrap.github.io/ "React Bootstrap"): Framework para dar estilos a la página.
+- [EmailJS](https://www.emailjs.com/ "EmailJS"): Para el uso y creacion de un formulario (funcional) sin la necesida de implementar back-end.
+- [Reac Router DOM](https://www.npmjs.com/package/react-router-dom "Reac Router DOM"): Librería encargada de generar rutas dinámicas facilitando la navegabilidad por la página.
+- [Semantic Ui](https://semantic-ui.com/introduction/getting-started.html "Semantic Ui"): Librería de estilos e iconos.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contacto
+-[Linkedin](https://www.linkedin.com/in/gimena-vilches/ "Linkedin")
+-[Mail](gimenavilches.gv@gmail.com "Mail")
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mi nombre es Gimena, soy desarrolladora web,  apasionada de la tecnología y la programación. Estoy en constante aprendizaje y siempre con mucha predisposición al trabajo en grupo.

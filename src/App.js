@@ -12,6 +12,7 @@ import {
 import Contact from './pages/contact';
 import PaymentMethods from "./pages/PaymentMethods";
 import Shipping from "./pages/Shipping";
+import Cart from './Components/CartWidget/Cart';
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
       <Route path="/shipping" element={<Shipping />} />
       <Route path="/payment" element={<PaymentMethods />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/cart" element={<Cart/>}/>
+      <Route path="*" element={ <h1>404 - Página no encontrada</h1> } />
       </Routes>
       </BrowserRouter>
       
