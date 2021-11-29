@@ -2,7 +2,7 @@ import "./ItemListContainer.css";
 
 import {Fragment, useState, useEffect } from 'react'
 import ItemList from "./ItemList";
-import getProducts from "../Services/Products";
+import { products } from "../Products";
 import { useParams } from "react-router";
 import Spinner from "../Spinner/spinner";
 
@@ -18,7 +18,7 @@ const ItemListContainer = () => {
     setLoader(true);
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(getProducts);
+        resolve(products);
       }, 2000);
     });
     promise

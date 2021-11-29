@@ -1,6 +1,4 @@
 import React, { Fragment } from "react";
-
-
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
@@ -12,8 +10,8 @@ const Item = ({ item }) => {
       <Card style={{ width: "18rem" }}>
         <Card.Img
           variant="top"
-          src={item.pictureUrl}
-          style={{ Height: "600px", objectFit: "cover" }}
+          src={item.img}
+          style={{ Height: "550px", objectFit: "cover" }}
         />
         <Card.Body style={{ textAlign: "center" }}>
           <Card.Title
@@ -32,7 +30,7 @@ const Item = ({ item }) => {
               paddingBottom: "1rem",
             }}
           >
-            <p className="fs-5 mb-0">{item.price}</p>
+            <p className="fs-5 mb-0">${item.price}</p>
           </div>
           <Button style={{backgroundColor:"rgb(79, 192, 172)", border:"none", color:"#fff"}}>Agregar al carrito</Button>
         </Card.Body>
@@ -43,3 +41,4 @@ const Item = ({ item }) => {
 };
 
 export default Item;
+
