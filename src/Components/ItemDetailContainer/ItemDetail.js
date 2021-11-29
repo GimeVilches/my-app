@@ -54,9 +54,9 @@ const ItemDetail = ({ items }) => {
                   </div>
                 )}
               </div>
-              <Col className="text-muted d-flex align-items-center">
-                Stock: {items.stock} unidades disponibles.
-              </Col>
+              <p>Stock: {items.stock} unidades disponibles.</p>
+              
+              
             </Col>
           </Row>
         </Container>
