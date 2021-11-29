@@ -1,6 +1,6 @@
 <h1 align="center">Ecommerce Techno Stuff</h1>
 
-TECHNO sTUFF es un e-commerce para la venta de celulares y Accesorios.
+TECHNO STUFF es un e-commerce para la venta de celulares y Accesorios.
 
 ## Cuenta al momento de la entrega con:
 - Filtro por categorías: tomando las categorías, al momento de la entrega de un Array de productos (Products.js).
