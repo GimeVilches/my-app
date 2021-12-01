@@ -49,7 +49,9 @@ function NavBar() {
                 Contactanos
               </Nav.Link>
             </Nav>
+            <Nav.Link as={Link} to="/cart">
             <CartWidget />
+            </Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>

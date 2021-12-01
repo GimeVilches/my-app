@@ -30,3 +30,17 @@ element.style {
     max-height: 350px;
     object-fit: cover;
 }
+.volverTienda {
+    padding: 0.9rem;
+    width: 150px;
+    border-style:hidden;
+    border-radius: 0.5rem;
+    background-color: #fb9a93;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000c08;
+    margin: 5px;
+    
+    
+   
+}

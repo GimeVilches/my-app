@@ -13,13 +13,14 @@ import Contact from './pages/contact';
 import PaymentMethods from "./pages/PaymentMethods";
 import Shipping from "./pages/Shipping";
 import Cart from './Components/CartWidget/Cart';
+import CartProvider from './Context/CartContext';
 
 
 function App() {
-  console.log("hola");
+  
   return (
     <div className="App">
-      
+      <CartProvider>
       <BrowserRouter>
       <NavBar />
       <Routes>
@@ -35,6 +36,7 @@ function App() {
       <Route path="*" element={ <h1>404 - Página no encontrada</h1> } />
       </Routes>
       </BrowserRouter>
+      </CartProvider>
       
     </div>
   );
