@@ -1,46 +1,40 @@
 import "./ItemListContainer.css";
 
-import {Fragment, useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { products } from "../Products";
+import app from "../Firebase/Index";
 import { useParams } from "react-router";
-import Spinner from "../Spinner/spinner";
 
-
-
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [loader, setLoader] = useState(false);
   const { catId } = useParams();
 
   useEffect(() => {
-    setLoader(true);
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 2000);
+    const db = getFirestore(app);
+    const itemsCollection = collection(db, "items");
+    const q = catId
+      ? query(itemsCollection, where("category", "==", catId))
+      : query(itemsCollection, orderBy("category"));
+    getDocs(q).then((snapshot) => {
+      if (catId === undefined) {
+        setItems(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } else {
+        let data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+        setItems(data);
+      }
     });
-    promise
-      .then((res) => {
-        catId ? setItems(res.filter((items) => items.category === catId)) :
-        setItems(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => (
-        setLoader(false)
-      ));
-  },[catId]);
+  }, [catId]);
 
-  return ( loader ? <Spinner /> :
-    <Fragment>
-      <div className="container-list">
-        <ItemList items={items} />
-      </div>
-    </Fragment>
-  );
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;

@@ -4,17 +4,20 @@
     
 }
 .botonCount{
-    font-size: 15px;
-    color: #e91133;
+    font-size: 17px;
+    color: black;
    height: 25px;
     margin-left: 20px;
     margin: 20px;
+    text-align: center;
+    background-color:#faf3e0 !important;
+
     
    
 }
 
 .contadorInicial{
-    color: #018b5a;
+    color: #ede9dd;
     margin-left: 20px;
     font-size: 15px;
     margin: 20px;
@@ -22,9 +25,16 @@
 }
 .botonAgregar{
     font-size: 15px;
-    color: #e91133;
+    color: #ede9dd;
    
     margin-left: 20px;
     height: 25px;
     margin: 20px;
+}
+button {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    background-color: #ede9dd ;
 }

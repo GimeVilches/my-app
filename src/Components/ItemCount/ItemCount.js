@@ -1,50 +1,58 @@
-import { useState, useEffect, Fragment } from 'react';
-import "./ItemCount.css"
+import React, { Fragment, useState } from "react";
+import { AddToCart, Finalizar, Home } from "../Alertas/Alertas";
 import { Button } from "react-bootstrap";
 
-function ItemCount({stock, onAdd, initial }) {
-    const [count, setCount] = useState(initial);
-   
-    const increase = () => {
-      if (count < stock) {
-        setCount(count + 1);
-        
-      }
-    };
-  
-    const decrease = () => {
-      if (count > initial) {
-        setCount(count - 1);
-        
-      }
-    };
-  
-    useEffect(() => {
-      onAdd(count);
-    }, [count]);
-  
-    return (
-      <Fragment>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            paddingBottom: "1rem",
-          }}
-        >
-          <Button variant="danger" onClick={decrease}>
-            -
-          </Button>{" "}
-          <p style={{ margin: "0" }}>{count}</p>
-          <Button variant="success" onClick={increase}>
-            +
-          </Button>{" "}
+const ItemCount = ({ Stock, onAdd }) => {
+  const initial = 1;
+  const [count, setCount] = useState(initial);
+  const [display, setDisplay] = useState("hidden");
+
+  const handleSumCount = () => {
+    if (count === Stock) return;
+    setCount(count + 1);
+  };
+
+  const handleSubtractCount = () => {
+    if (count === 0) return;
+    setCount(count - 1);
+  };
+
+  const handleOnAdd = () => {
+    onAdd(count);
+    setCount(initial);
+    setDisplay("block");
+  };
+
+  return (
+    <Fragment>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Button variant="success" onClick={handleSubtractCount}>
+          -
+        </Button>{" "}
+        <p style={{ margin: "0" }}>{count}</p>
+        <Button variant="success" onClick={handleSumCount}>
+          +
+        </Button>{" "}
+      </div>
+      {display === "block" ? (
+        <div className="space-y-2">
+          <Finalizar />
+          <Home />
         </div>
-      </Fragment>
-  
-    );
-  }
-  
-  export default ItemCount;
-  
+      ) : (
+        <>
+          <AddToCart setDisplay={setDisplay} handleOnAdd={handleOnAdd} />
+        </>
+      )}
+    </Fragment>
+  );
+};
+
+export default ItemCount;

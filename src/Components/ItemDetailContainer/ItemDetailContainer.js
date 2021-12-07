@@ -1,44 +1,29 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { useState, useEffect, Fragment } from "react";
+import { useParams } from "react-router-dom";
+import app from "../Firebase/Index";
+import { getDoc, getFirestore, doc } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
-import { useParams } from "react-router";
-import { products } from "../Products";
 import Spinner from "../Spinner/spinner";
 
-
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState({});
-  const [loader, setLoader] = useState(false);
-  const { itemId } = useParams();
-  console.log(itemId);
+  const { id } = useParams();
+  const [item, setItem] = useState([]);
+  const [loader, setLoader] = useState(true);
+
   useEffect(() => {
-    setLoader(true);
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 2000);
+    const db = getFirestore(app);
+    const itemRef = doc(db, "items", id);
+    getDoc(itemRef).then((snapshot) => {
+      setItem({ id: snapshot.id, ...snapshot.data() });
+      setLoader(false);
     });
+  }, [id]);
 
-    promise
-      .then((res) => {
-        if (itemId) {
-          const foundItem = res.find((items) => items.id === Number(itemId));
-          
-          if (foundItem) setItems(foundItem); 
-        }
-      })
-      .catch(() => {
-        console.log("Error al cargar");
-      })
-      .finally(() => {
-        setLoader(false)
-      });
-  }, [itemId]);
-
-  return ( loader ? <Spinner/> :
+  return loader ? (
+    <Spinner />
+  ) : (
     <Fragment>
-      
-        <ItemDetail items={items} />
-
+      <ItemDetail item={item}></ItemDetail>
     </Fragment>
   );
 };

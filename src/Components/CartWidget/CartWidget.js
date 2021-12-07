@@ -1,16 +1,22 @@
 import "./CartWidget.css";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
+import { useCart } from "../../Context/CartContext";
 
-
-const CartWidget= () =>{
-    return(
-        <div className="carrito">
-            <ShoppingCartIcon fontSize="large" />
-            
-        
-        
-        </div>
-    )
-
-}
-export default CartWidget
+const CartWidget = () => {
+  const { cartWidgetItems } = useCart();
+  return (
+    <div className="carrito">
+      <ShoppingCartIcon
+        fontSize="large"
+        component={Link}
+        to="/cart"
+        color="inherit"
+      />
+      {cartWidgetItems() === 0 ? null : (
+        <div className="">{cartWidgetItems()}</div>
+      )}
+    </div>
+  );
+};
+export default CartWidget;
