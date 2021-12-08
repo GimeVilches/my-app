@@ -2,18 +2,18 @@ import React, { Fragment, useState } from "react";
 import { AddToCart, Finalizar, Home } from "../Alertas/Alertas";
 import { Button } from "react-bootstrap";
 
-const ItemCount = ({ Stock, onAdd }) => {
+const ItemCount = ({ stock, onAdd }) => {
   const initial = 1;
   const [count, setCount] = useState(initial);
   const [display, setDisplay] = useState("hidden");
 
   const handleSumCount = () => {
-    if (count === Stock) return;
+    if (count === stock) return;
     setCount(count + 1);
   };
 
   const handleSubtractCount = () => {
-    if (count === 0) return;
+    if (count === 1) return;
     setCount(count - 1);
   };
 

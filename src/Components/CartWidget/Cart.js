@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useCart } from "../../Context/CartContext";
-import { BotonUno, ButtonClearCart } from "../Alertas/Alertas";
+import { BotonUno, ButtonClearCart, Finalizar } from "../Alertas/Alertas";
 import "./Cart.css";
 
 import ItemCart from "./ItemCart";
@@ -40,7 +40,9 @@ const Cart = () => {
             ))
           ) : (
             <>
-              <p className="noItemsCart">No hay Items en el Carrito</p>
+              <p className="sinProductos">
+                No se encuentran productos en el Carrito
+              </p>
               <BotonUno to="/products" text="Ir a la tienda" />
             </>
           )}
@@ -70,6 +72,7 @@ const Cart = () => {
                 <div className="flexButtons">
                   <BotonUno to="/category" text="Seguir comprando" />
                   <ButtonClearCart clearCart={clearCart} />
+                  <Finalizar />
                 </div>
               </Fragment>
             </>

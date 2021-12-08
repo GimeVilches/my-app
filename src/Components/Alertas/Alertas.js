@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -35,14 +35,14 @@ export const AddToCart = ({ handleOnAdd }) => {
 
 export const BotonUno = ({ text }) => (
   <Link to="/">
-    <Button className="botonUno">{text}</Button>
+    <button className="botonUno">{text}</button>
   </Link>
 );
 export const ButtonClearCart = ({ clearCart }) => (
-  <Button onClick={clearCart} className="botonVaciar">
+  <button onClick={clearCart} className="botonVaciar">
     Vaciar carrito
     <DeleteIcon />
-  </Button>
+  </button>
 );
 
 export const RemoveIcon = () => <DeleteIcon />;
@@ -58,11 +58,27 @@ export const Home = () => {
 };
 
 export const Finalizar = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Link to="/cart" className="">
-      <button className="botonFinalizar">
+      <button className="botonFinalizar" onClick={handleShow}>
         <span className="">Terminar compra</span>
       </button>
+      <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Muchas Gracias por su compra!!</Modal.Body>
+        <Modal.Footer>
+          <Button className="botonFinalizar" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Link>
   );
 };

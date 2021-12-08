@@ -5,8 +5,8 @@ import { Card, Button } from "react-bootstrap";
 const Item = ({ id, img, stock, title, price, description, category }) => {
   return (
     <Fragment>
-      <Link className="card-container" to={`/item/${id}`}>
-        <Card style={{ width: "18rem" }}>
+      <Link className="cardContainer" to={`/item/${id}`}>
+        <Card style={{ width: "300px" }}>
           <Card.Img
             variant="top"
             src={img}
@@ -27,7 +27,7 @@ const Item = ({ id, img, stock, title, price, description, category }) => {
                 paddingBottom: "1rem",
               }}
             >
-              <p className="fs-5 mb-0">{price}</p>
+              <p className="fs-5 mb-0">${price}</p>
             </div>
             <Button
               style={{

@@ -42,10 +42,11 @@
 }
 
 .totalContainer{
-    margin-top: 15px !important;
+    margin-top: 25px !important;
 }
 
-.noItemsCart{
+.sinProductos{
     font-size: 3rem;
-    margin: 20px;
+    margin: 30px;
+    color: #018b5a;
 }

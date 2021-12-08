@@ -25,8 +25,8 @@ const ItemDetail = ({ item }) => {
           </Col>
           <Col className="info-container">
             <div className="d-flex flex-column justify-content-start">
-              <h2>{item.title}</h2>
-              <h2> {item.price}</h2>
+              <h2 className="tituloProd">{item.title}</h2>
+              <h2>$ {item.price}</h2>
               <p className="pb-5">{item.description}</p>
 
               <ItemCount stock={item.stock} initial={0} onAdd={onAdd} />

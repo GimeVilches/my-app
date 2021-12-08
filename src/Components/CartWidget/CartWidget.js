@@ -9,7 +9,7 @@ const CartWidget = () => {
     <div className="carrito">
       <ShoppingCartIcon
         fontSize="large"
-        component={Link}
+        // component={Link}
         to="/cart"
         color="inherit"
       />

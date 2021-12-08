@@ -1,6 +1,29 @@
 .CardContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, .6fr);
+  grid-gap: 10px;
+  gap: 10px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+ 
+}
+  a {
+    color: #e91133;
+    text-decoration: none;
   }
+  .card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f1fbf9;
+    background-clip: border-box;
+    border: 1px solid  #045630;
+    border-radius: 0.25rem;
+    
+}
