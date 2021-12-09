@@ -50,3 +50,26 @@
     margin: 30px;
     color: #018b5a;
 }
+form {
+    background-color: rgba(255,255,255,0.40);
+    border-radius: 20px;
+    margin: 30px;
+}
+label {
+    display: block;
+    margin: 15px;
+    text-align: start;
+    font-size: 16px;
+}
+input {
+    margin-left: 20px;
+    width: 300px;
+    height: 20px;
+    font-size: 16px;
+    font-family: 'Play';
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+input:focus {
+    outline: none
+}
