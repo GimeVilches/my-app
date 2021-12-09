@@ -50,8 +50,8 @@ const Cart = () => {
     const batch = writeBatch(db);
     cart.forEach((item) => {
       console.log("Iteracion del forEach", item);
-      const itemRef = doc(db, "items", item.id);
-      batch.update(itemRef, { stock: item.stock - item.quantity });
+      const itemRef = doc(db, "items", item.item.id);
+      batch.update(itemRef, { stock: item.item.stock - item.quantity });
     });
 
     batch.commit();
