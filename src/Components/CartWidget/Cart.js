@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
 import { useCart } from "../../Context/CartContext";
-import { BotonUno, ButtonClearCart, Finalizar } from "../Alertas/Alertas";
+import { BotonUno, ButtonClearCart } from "../Alertas/Alertas";
 import "./Cart.css";
 import ItemCart from "./ItemCart";
-import app from "../Firebase/Index";
 import { addDoc, collection, getFirestore } from "@firebase/firestore";
 import { useState } from "react";
 import "../Alertas/Alertas.css";
-import { AddToCart } from "../Alertas/Alertas";
 import Swal from "sweetalert2";
 
 const Cart = () => {
@@ -41,9 +39,7 @@ const Cart = () => {
         confirmButtonText: "OK",
       });
     });
-    // .catch((e) => console.log(e));
 
-    // .catch((e) => console.log(e));
     // cart.forEach(item => {
     //   const itemRef=data (db , "items", item, id),
     //   batch.update(itemRef, item.stock - item.quantity);
