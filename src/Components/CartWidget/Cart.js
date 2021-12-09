@@ -3,7 +3,13 @@ import { useCart } from "../../Context/CartContext";
 import { BotonUno, ButtonClearCart } from "../Alertas/Alertas";
 import "./Cart.css";
 import ItemCart from "./ItemCart";
-import { addDoc, collection, getFirestore } from "@firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  writeBatch,
+  doc,
+} from "@firebase/firestore";
 import { useState } from "react";
 import "../Alertas/Alertas.css";
 import Swal from "sweetalert2";
@@ -30,7 +36,7 @@ const Cart = () => {
       total: total,
     };
     const db = getFirestore();
-    // const batch = db.batch;
+
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order).then((data) => {
       clearCart(data);
@@ -41,13 +47,16 @@ const Cart = () => {
         confirmButtonText: "OK",
       });
     });
-    // cart.forEach(item => {
-    //   const itemRef=data (db , "items", item, id),
-    //   batch.update(itemRef,{item.stock - item.quantity} );
-    //       batch.commit ();
+    const batch = writeBatch(db);
+    cart.forEach((item) => {
+      console.log("Iteracion del forEach", item);
+      const itemRef = doc(db, "items", item.id);
+      batch.update(itemRef, { stock: item.stock - item.quantity });
+    });
 
-    // });
+    batch.commit();
   }
+
   return (
     <div
       sx={{
