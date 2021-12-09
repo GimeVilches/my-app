@@ -51,15 +51,21 @@
     color: #018b5a;
 }
 form {
-    background-color: rgba(255,255,255,0.40);
+    background-color: rgba(200, 252, 243, 0.4);
     border-radius: 20px;
     margin: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
 }
 label {
     display: block;
     margin: 15px;
     text-align: start;
     font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
 }
 input {
     margin-left: 20px;

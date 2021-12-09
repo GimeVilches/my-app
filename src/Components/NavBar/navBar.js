@@ -1,6 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
-import React, { Component } from "react";
 
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -20,7 +19,7 @@ function NavBar() {
             </Nav.Link>
             <NavDropdown
               className="opciones"
-              title="Categorías"
+              title="Productos"
               id="basic-nav-dropdown"
             >
               <NavDropdown.Item as={Link} to="/category">

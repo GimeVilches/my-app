@@ -82,3 +82,14 @@ export const Finalizar = () => {
     </Link>
   );
 };
+export const BotonCel = ({ text }) => (
+  <Link to="/category/celular">
+    <button className="botonUno">{text}</button>
+  </Link>
+);
+
+export const BotonAcce = ({ text }) => (
+  <Link to="/category/accesorio">
+    <button className="botonUno">{text}</button>
+  </Link>
+);

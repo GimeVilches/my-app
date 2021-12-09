@@ -9,6 +9,8 @@ import PaymentMethods from "./pages/PaymentMethods";
 import Shipping from "./pages/Shipping";
 import Cart from "./Components/CartWidget/Cart";
 import CartProvider from "./Context/CartContext";
+import Home from "./Components/Home/Home";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <NavBar />
+
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route
-              path="/"
+              path="/Category"
               element={
                 <ItemListContainer
                   color="#fb9a93"
@@ -26,6 +30,7 @@ function App() {
                 />
               }
             />
+
             <Route path="/category" element={<ItemListContainer />} />
             <Route path="/category/:catId" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
@@ -35,6 +40,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CartProvider>
     </div>

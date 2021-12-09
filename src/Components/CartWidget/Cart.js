@@ -29,6 +29,7 @@ const Cart = () => {
       total: total,
     };
     const db = getFirestore();
+    // const batch = db.batch;
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order).then((data) => {
       clearCart(data);
@@ -39,10 +40,10 @@ const Cart = () => {
         confirmButtonText: "OK",
       });
     });
-
     // cart.forEach(item => {
     //   const itemRef=data (db , "items", item, id),
-    //   batch.update(itemRef, item.stock - item.quantity);
+    //   batch.update(itemRef,{item.stock - item.quantity} );
+    //       batch.commit ();
 
     // });
   }
@@ -107,7 +108,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <form>
-                  Ingrese sus datos para efectuar la Compra
+                  <h4>Ingrese sus datos para efectuar la Compra</h4>
                   <label>
                     Nombre Completo:
                     <input
