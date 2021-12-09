@@ -7,6 +7,7 @@ import { addDoc, collection, getFirestore } from "@firebase/firestore";
 import { useState } from "react";
 import "../Alertas/Alertas.css";
 import Swal from "sweetalert2";
+import vacio from "../Assets/Images/carrovacio.jpg";
 
 const Cart = () => {
   const { cart, clearCart, cartWidgetItems, totalPrice } = useCart();
@@ -78,6 +79,7 @@ const Cart = () => {
             ))
           ) : (
             <>
+              <img src={vacio} alt="emptyCart" />
               <p className="sinProductos">
                 No se encuentran productos en el Carrito
               </p>

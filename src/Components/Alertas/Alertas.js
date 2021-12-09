@@ -68,17 +68,6 @@ export const Finalizar = () => {
       <button className="botonFinalizar" onClick={handleShow}>
         <span className="">Terminar compra</span>
       </button>
-      {/* <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Muchas Gracias por su compra!!</Modal.Body>
-        <Modal.Footer>
-          <Button className="botonFinalizar" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
     </Link>
   );
 };
