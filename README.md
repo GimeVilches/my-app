@@ -34,6 +34,7 @@ TECHNO STUFF es un e-commerce para la venta de celulares y Accesorios.
 - [EmailJS](https://www.emailjs.com/ "EmailJS"): Para el uso y creacion de un formulario (funcional) sin la necesida de implementar back-end.
 - [Reac Router DOM](https://www.npmjs.com/package/react-router-dom "Reac Router DOM"): Librería encargada de generar rutas dinámicas facilitando la navegabilidad por la página.
 - [Semantic Ui](https://semantic-ui.com/introduction/getting-started.html "Semantic Ui"): Librería de estilos e iconos.
+- [Material Ui](https://mui.com/getting-started/usage/ "Material Ui"): Librería de estilos e iconos.
 
 
 
