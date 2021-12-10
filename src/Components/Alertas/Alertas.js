@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -18,7 +17,7 @@ export const Alert = () => {
     toast: true,
   });
 };
-export const AddToCart = ({ handleOnAdd }) => {
+export const AddToCart = ({ handleOnAdd, count }) => {
   return (
     <button
       className="agregar"
@@ -26,6 +25,7 @@ export const AddToCart = ({ handleOnAdd }) => {
         handleOnAdd();
         Alert();
       }}
+      disabled={count === 0}
     >
       Agregar al carrito
       <ShoppingCartIcon />

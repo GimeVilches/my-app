@@ -10,7 +10,7 @@ const Item = ({ id, img, stock, title, price, description, category }) => {
           <Card.Img
             variant="top"
             src={img}
-            style={{ Height: "550px", objectFit: "cover" }}
+            style={{ Height: "5em", objectFit: "cover" }}
           />
           <Card.Body style={{ textAlign: "center" }}>
             <Card.Title

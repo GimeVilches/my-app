@@ -3,7 +3,7 @@ import { AddToCart, Finalizar, Home } from "../Alertas/Alertas";
 import { Button } from "react-bootstrap";
 
 const ItemCount = ({ stock, onAdd }) => {
-  const initial = 1;
+  const initial = 0;
   const [count, setCount] = useState(initial);
   const [display, setDisplay] = useState("hidden");
 
@@ -48,7 +48,11 @@ const ItemCount = ({ stock, onAdd }) => {
         </div>
       ) : (
         <>
-          <AddToCart setDisplay={setDisplay} handleOnAdd={handleOnAdd} />
+          <AddToCart
+            setDisplay={setDisplay}
+            handleOnAdd={handleOnAdd}
+            count={count}
+          />
         </>
       )}
     </Fragment>
