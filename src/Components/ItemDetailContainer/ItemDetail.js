@@ -1,7 +1,6 @@
 import "./ItemDetail.css";
 import { Row, Container, Col, Image } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
-
 import { useCart } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {

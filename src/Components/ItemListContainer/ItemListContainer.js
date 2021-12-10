@@ -1,10 +1,8 @@
 import "./ItemListContainer.css";
-
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import app from "../Firebase/Index";
 import { useParams } from "react-router";
-
 import {
   collection,
   getDocs,
