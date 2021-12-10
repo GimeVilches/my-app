@@ -3,13 +3,13 @@
 TECHNO STUFF es un e-commerce para la venta de celulares y Accesorios.
 
 ## Cuenta al momento de la entrega con:
-- Filtro por categorías: tomando las categorías, al momento de la entrega de un Array de productos (Products.js).
-- Carrito: Al momento de la entrega es estatico.
-- Vistas de listas de productos: vista general de productos con foto y detalles mínimos.
-- Vista de detalles: vista con todos los detalles del producto y la opción de agregar una cantidad del mismo (esto ultimo al momento es estatico).
+- Filtro por categorías: tomando las categorías de la base de datos del Firebase.
+- Carrito de compras funciona.
+- Vistas de listas de productos: vista general de productos con foto y detalles.
+- Vista de detalles: vista con todos los detalles del producto y la opción de agregar una cantidad del mismo a comprar.
 -  Barra de navegacion funcional con react router
 - Formulario de contacto funcional.
-- Proximamente se sumaran otras funcionalidades y se mejoraran otras.
+
 
 ## Pasos para ver el sitio desde local
 1. Desde la opcion Code copiamos el link HTTPS:
