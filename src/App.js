@@ -14,7 +14,7 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column min-vh-100">
       <CartProvider>
         <BrowserRouter>
           <NavBar />
